@@ -5,10 +5,10 @@ import java.io.*;
 
 public class FileSearch {	
 	public static void main(String [] args){
-		Scanner sc=new Scanner(System.in);
-		System.out.print("Pls input the path");
+		Scanner sc=new Scanner(System.in);//创建键盘的输入；
+		System.out.print("Pls input the path");//输入指定路径；
 		String path=sc.next();
-		System.out.print("Pls input the matcher");
+		System.out.print("Pls input the matcher");//输入
 		String matcher=sc.next();
 		File root =new File(path);
 		if(true==root.exists()){
