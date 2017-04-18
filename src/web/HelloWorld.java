@@ -33,10 +33,8 @@ public class HelloWorld extends HttpServlet {
 	    response.setContentType("text/html;charset=utf-8");
             response. setCharacterEncoding("UTF-8");
             PrintWriter out = response.getWriter();
-            Enumeration en = request.getParameterNames();
-            while (en.hasMoreElements()){
-                String paramName = (String) en.nextElement();
-                if((paramName.equals("language"))&&(request.getParameter(paramName).equals("english"))){
+            String ss=request.getParameter("language"); 
+                if(ss.equals("english")){
                     out.println("<html>");
                     out.println("<head>");
                     out.println("<title>HelloWorld</title>");
@@ -45,9 +43,8 @@ public class HelloWorld extends HttpServlet {
                     out.println("HelloWorld");
                     out.println("</body>");
                     out.println("</html>");
-                    break;
                 }
-                else if((paramName.equals("language"))&&(request.getParameter(paramName).equals("chinese"))){
+                else if(ss.equals("chinese")){
                     out.println("<html>");
                     out.println("<head>");
                     out.println("<title>向世界问好</title>");
@@ -56,9 +53,8 @@ public class HelloWorld extends HttpServlet {
                     out.println("尼玛嗨");
                     out.println("</body>");
                     out.println("</html>");
-                    break;
                 }
-                else if((paramName.equals("language"))&&(request.getParameter(paramName).equals("mars"))){
+                else if(ss.equals("mars")){
                     out.println("<html>");
                     out.println("<head>");
                     out.println("<title>Burning Burning Burning</title>");
@@ -67,10 +63,9 @@ public class HelloWorld extends HttpServlet {
                     out.println("B神好");
                     out.println("</body>");
                     out.println("</html>");
-                    break;
                 }
-            }
-	}
+                    
+                }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
