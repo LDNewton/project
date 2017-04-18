@@ -33,8 +33,7 @@ public class HelloWorld extends HttpServlet {
 	    response.setContentType("text/html;charset=utf-8");
             response. setCharacterEncoding("UTF-8");
             PrintWriter out = response.getWriter();
-            String ss=request.getParameter("language"); 
-                if(ss.equals("english")){
+                if(request.getParameter("language").equals("english")){
                     out.println("<html>");
                     out.println("<head>");
                     out.println("<title>HelloWorld</title>");
@@ -44,7 +43,7 @@ public class HelloWorld extends HttpServlet {
                     out.println("</body>");
                     out.println("</html>");
                 }
-                else if(ss.equals("chinese")){
+                else if(request.getParameter("language").equals("chinese")){
                     out.println("<html>");
                     out.println("<head>");
                     out.println("<title>向世界问好</title>");
@@ -54,7 +53,7 @@ public class HelloWorld extends HttpServlet {
                     out.println("</body>");
                     out.println("</html>");
                 }
-                else if(ss.equals("mars")){
+                else if(request.getParameter("language").equals("mars")){
                     out.println("<html>");
                     out.println("<head>");
                     out.println("<title>Burning Burning Burning</title>");
